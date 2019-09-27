@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Page Plot</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="chart" id="count-type1">
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart" id="dua">
+
+            </div>
+        </div>  
+
+    </div>
+    
+
+    <script>
+        // var count_type1 =
+        // var plot2 = {{data[1] | safe}}
+        Plotly.plot('count-type1' , {{data[0] | safe}} , {})
+        Plotly.plot('dua' , {{data[1] | safe}} , {})
+    </script>
+
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Page Data MPG </h1>
+    <table class="table">
+        <thead>
+            <tr>
+                {%  for item in data.columns%}
+                    <th>{{item}}</th>
+                {%  endfor  %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for index,item in data.iterrows() %}
+                <tr>
+                    {% for col in item %}
+                        <td>{{col}}</td>
+                    {% endfor %}
+                    <!-- <td>{{item['Name']}}</td>
+                    <td>{{item['Type 1']}}</td>
+                    <td>{{item['Type 2']}}</td>
+                    <td>{{item['Total']}}</td>
+                    <td>{{item['Total']}}</td> -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock body %}
